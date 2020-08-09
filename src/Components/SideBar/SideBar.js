@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent, SidebarFooter } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
 
@@ -20,7 +20,7 @@ const SideBar = () => {
                         </SubMenu>
                     </Menu>
                 </SidebarContent>
-                
+
             </ProSidebar>
         </div>
     );

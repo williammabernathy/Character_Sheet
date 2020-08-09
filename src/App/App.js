@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Home from '../Home/Home';
-import ControlPanel from '../ControlPanel/ControlPanel';
+import Home from '../Components/Home/Home';
+import ControlPanel from '../Components/ControlPanel/ControlPanel';
+import Login from '../Components/Login/Login';
+import Account from '../Components/Account/Account';
 
 const App = () => {
   return (
@@ -20,14 +22,20 @@ const App = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/controlpanel">Control Panel</Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link  href="/account">Account</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Navbar>
 
         <Switch>
           <Route exact path='/' component={Home}></Route>
           <Route exact path='/controlpanel' component={ControlPanel}></Route>
+          <Route exact path='/login' component={Login}></Route>
+          <Route exact path='/account' component={Account}></Route>
         </Switch>
-        
+
       </Router>
     </div>
   );
