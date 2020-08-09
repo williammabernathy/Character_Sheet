@@ -5,3 +5,7 @@
     border-width: 1px;
     border-color: grey;
 }
+
+.sidebarToggleButton {
+    margin: 5px;
+}
