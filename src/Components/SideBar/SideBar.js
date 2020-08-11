@@ -1,12 +1,13 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Switch from "react-switch";
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
 
 class SideBar extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             collapsed: false
@@ -31,13 +32,11 @@ class SideBar extends React.Component {
                     <SidebarContent>
                         <Menu iconShape="square">
                             <MenuItem>
-                                <ToggleButton className="sidebarToggleButton"
-                                    type="checkbox"
+                                Minimize Sidebar<br/>
+                                <Switch className="sidebarToggleButton"
                                     variant="secondary"
                                     checked={this.state.collapsed}
-                                    onChange={(e) => this.handleCollapseToggle(e.currentTarget.checked)}>
-                                    Minimize Sidebar
-                                    </ToggleButton>
+                                    onChange={this.handleCollapseToggle}/>
                             </MenuItem>
                             <MenuItem>Stuff 2</MenuItem>
                             <MenuItem>Stuff 3</MenuItem>
