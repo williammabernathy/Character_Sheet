@@ -1,6 +1,5 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
-import ToggleButton from 'react-bootstrap/ToggleButton';
 import Switch from "react-switch";
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
