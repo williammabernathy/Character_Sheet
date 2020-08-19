@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
+import { Link } from 'react-router-dom';
 import Switch from "react-switch";
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
@@ -37,13 +38,14 @@ class SideBar extends React.Component {
                                     checked={this.state.collapsed}
                                     onChange={this.handleCollapseToggle}/>
                             </MenuItem>
-                            <MenuItem>Stuff 2</MenuItem>
-                            <MenuItem>Stuff 3</MenuItem>
-                            <MenuItem>Stuff 4</MenuItem>
-                            <SubMenu title="DropDown PH" >
-                                <MenuItem>Component 1</MenuItem>
-                                <MenuItem>Component 2</MenuItem>
-                            </SubMenu>
+                            <MenuItem>
+                                Character Sheet
+                                {/*<Link to="controlpanel/charactersheet"/>*/}
+                            </MenuItem>
+                            <MenuItem>
+                                Chat
+                                {/*<Link to="controlpanel/chat"/>*/}
+                            </MenuItem>
                         </Menu>
                     </SidebarContent>
 
