@@ -8,6 +8,7 @@ import Home from '../Components/Home/Home';
 import ControlPanel from '../Components/ControlPanel/ControlPanel';
 import Login from '../Components/Login/Login';
 import Account from '../Components/Account/Account';
+import Chat from '../Components/Chat/Chat';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/controlpanel">Control Panel</Nav.Link>
+              <Nav.Link href="/chat">Zach Chat Testing</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="/login">Login</Nav.Link>
@@ -34,6 +36,7 @@ const App = () => {
           <Route exact path='/controlpanel' component={ControlPanel}></Route>
           <Route exact path='/login' component={Login}></Route>
           <Route exact path='/account' component={Account}></Route>
+          <Route exact path='/chat' component={Chat}></Route>
         </Switch>
 
       </Router>
