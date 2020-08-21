@@ -10,16 +10,42 @@ class SideBar extends React.Component {
         super();
 
         this.state = {
-            collapsed: false
+            collapsed: false,
+            rtl: false
         };
 
         this.handleCollapseToggle = this.handleCollapseToggle.bind(this);
+        this.handleRTLToggle = this.handleRTLToggle.bind(this);
     }
 
     // set the state to change if sidebar is toggled or not
     handleCollapseToggle(collapsed) {
-        console.log("collapsed = " + collapsed);
-        this.setState({ collapsed });
+        collapsed = this.state.collapsed    // convert from bound object to string
+
+        if(collapsed === false)             // swap (toggle) value on click
+        {
+            collapsed = true;
+        }
+        else {
+            collapsed = false;
+        }
+
+        this.setState({ collapsed });       // set state call to update sidebar
+    }
+
+    // set the state to change sidebar position from right to left or opposite
+    handleRTLToggle(rtl) {
+        rtl = this.state.rtl    // convert from bound object to string
+
+        if(rtl === false)             // swap (toggle) value on click
+        {
+            rtl = true;
+        }
+        else {
+            rtl = false;
+        }
+
+        this.setState({ rtl });
     }
 
     /*
@@ -28,14 +54,14 @@ class SideBar extends React.Component {
     render() {
         return (
             <div className="sideBarWrapper">
-                <ProSidebar collapsed={this.state.collapsed}>
+                <ProSidebar collapsed={this.state.collapsed} rtl={this.state.rtl}>
 
                     <SidebarContent>
                         <Menu iconShape="circle">
                             <MenuItem icon={<BiArrowToLeft />} onClick={this.handleCollapseToggle}>
                                 Minimize Sidebar
                             </MenuItem>
-                            <MenuItem icon={<BiTransferAlt />}>
+                            <MenuItem icon={<BiTransferAlt />} onClick={this.handleRTLToggle}>
                                 RightToLeft
                             </MenuItem>
                             <MenuItem icon={<BiBookContent />}>
