@@ -1,5 +1,5 @@
 .statBlockContainer {
-
+    
 }
 
 .statBlockTitle {
@@ -7,7 +7,7 @@
 }
 
 .statBlockBonusField {
-
+    width: 50px;
 }
 
 .statBlockStatValueField {

@@ -10,13 +10,17 @@ const ControlPanel = ({ match }) => {
   return (
     <div className="controlPanelWrapper">
       <Router>
-        <SideBar />
+        <div className="sidebarWrapper">
+          <SideBar />
+        </div>
 
-        <Switch>
-          <Route exact path={`${match.path}/`} component={Main}></Route>
-          <Route path={`${match.path}/charactersheet`} component={CharacterSheetMain}></Route>
-          <Route path={`${match.path}/chat`} component={Chat}></Route>
-        </Switch>
+        <div className="contentWrapper">
+          <Switch>
+            <Route exact path={`${match.path}/`} component={Main}></Route>
+            <Route path={`${match.path}/charactersheet`} component={CharacterSheetMain}></Route>
+            <Route path={`${match.path}/chat`} component={Chat}></Route>
+          </Switch>
+        </div>
       </Router>
     </div>
   );

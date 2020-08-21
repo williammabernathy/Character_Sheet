@@ -1,11 +1,6 @@
 .sideBarWrapper{
-    float: left;
     height: 100vh;
     border-top-style: solid;
     border-width: 1px;
     border-color: grey;
-}
-
-.sidebarToggleButton {
-    margin: 5px;
 }

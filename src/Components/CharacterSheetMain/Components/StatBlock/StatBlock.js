@@ -1,14 +1,17 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 import './StatBlock.css'
 
-const StatBlock = () => {
+const StatBlock = ( {statName} ) => {
     return (
         <div className="statBlockContainer">
             <div className="statBlockTitle">
-                Stat Name
+                {statName}
             </div>
             <div className="statBlockBonusField">
-
+                <Form>
+                    <Form.Control/>
+                </Form>
             </div>
             <div className="statBlockStatValueField">
 
