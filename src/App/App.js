@@ -22,7 +22,6 @@ const App = () => {
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/controlpanel">Control Panel</Nav.Link>
-              <Nav.Link href="/chat">Zach Chat Testing</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="/login">Login</Nav.Link>
@@ -36,7 +35,6 @@ const App = () => {
           <Route path='/controlpanel' component={ControlPanel}></Route>
           <Route exact path='/login' component={Login}></Route>
           <Route exact path='/account' component={Account}></Route>
-          <Route exact path='/chat' component={Chat}></Route>
         </Switch>
 
       </Router>
