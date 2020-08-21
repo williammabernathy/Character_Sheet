@@ -1,84 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ProSidebar, Menu, MenuItem, SidebarContent } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import { BiArrowToLeft, BiTransferAlt, BiBookContent, BiMessageDetail } from 'react-icons/bi';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
 
-class SideBar extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            collapsed: false,
-            rtl: false
-        };
-
-        this.handleCollapseToggle = this.handleCollapseToggle.bind(this);
-        this.handleRTLToggle = this.handleRTLToggle.bind(this);
-    }
+const SideBar = () => {
+    const [rtl, setRtl] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
     // set the state to change if sidebar is toggled or not
-    handleCollapseToggle(collapsed) {
-        collapsed = this.state.collapsed    // convert from bound object to string
-
-        if(collapsed === false)             // swap (toggle) value on click
+    const handleCollapseToggle = () => {
+        if (collapsed === false)            
         {
-            collapsed = true;
+            setCollapsed(true);
         }
         else {
-            collapsed = false;
+            setCollapsed(false);
         }
-
-        this.setState({ collapsed });       // set state call to update sidebar
     }
 
     // set the state to change sidebar position from right to left or opposite
-    handleRTLToggle(rtl) {
-        rtl = this.state.rtl    // convert from bound object to string
-
-        if(rtl === false)             // swap (toggle) value on click
+    const handleRTLToggle = () => {
+        if (rtl === false)           
         {
-            rtl = true;
+            setRtl(true);
         }
         else {
-            rtl = false;
+            setRtl(false);
         }
-
-        this.setState({ rtl });
     }
 
     /*
         render
     */
-    render() {
-        return (
-            <div className="sideBarWrapper">
-                <ProSidebar collapsed={this.state.collapsed} rtl={this.state.rtl}>
+    return (
+        <div className="sideBarWrapper">
+            <ProSidebar collapsed={collapsed} rtl={rtl}>
 
-                    <SidebarContent>
-                        <Menu iconShape="circle">
-                            <MenuItem icon={<BiArrowToLeft />} onClick={this.handleCollapseToggle}>
-                                Minimize Sidebar
+                <SidebarContent>
+                    <Menu iconShape="circle">
+                        <MenuItem icon={<BiArrowToLeft />} onClick={() => handleCollapseToggle()}>
+                            Minimize Sidebar
                             </MenuItem>
-                            <MenuItem icon={<BiTransferAlt />} onClick={this.handleRTLToggle}>
-                                RightToLeft
+                        <MenuItem icon={<BiTransferAlt />} onClick={() => handleRTLToggle()}>
+                            RightToLeft
                             </MenuItem>
-                            <MenuItem icon={<BiBookContent />}>
-                                Character Sheet
+                        <MenuItem icon={<BiBookContent />}>
+                            Character Sheet
                                 <Link to="/controlpanel/charactersheet" />
-                            </MenuItem>
-                            <MenuItem icon={<BiMessageDetail />}>
-                                Chat
+                        </MenuItem>
+                        <MenuItem icon={<BiMessageDetail />}>
+                            Chat
                                 <Link to="/controlpanel/chat" />
-                            </MenuItem>
-                        </Menu>
-                    </SidebarContent>
+                        </MenuItem>
+                    </Menu>
+                </SidebarContent>
 
-                </ProSidebar>
-            </div>
-        );
-    }
+            </ProSidebar>
+        </div>
+    );
 };
 
 export default SideBar;
