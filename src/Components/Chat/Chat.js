@@ -1,11 +1,13 @@
-import React from "react";
+import React, { createRef } from "react";
 import "./Chat.css";
 import { useState } from "react";
+import { useEffect } from "react";
 import ChatMessage from "./Components/ChatMessage";
 
 const Chat = () => {
   const [chatLog, setChatLog] = useState([]);
   const [input, setInput] = useState("");
+  const chatContainerRef = React.createRef();
 
   const updateText = (event) => {
     setChatLog([...chatLog, input]);
@@ -13,9 +15,15 @@ const Chat = () => {
     event.preventDefault();
   };
 
+  const scrollToBottom = (ref) => {
+    ref.current.scrollTop = ref.current.scrollHeight;
+  };
+
+  useEffect(() => scrollToBottom(chatContainerRef), [chatContainerRef])
+
   return (
     <div className="chat">
-      <div className="chatContainer">
+      <div className="chatContainer" ref={chatContainerRef}>
         {chatLog.map((chatMessage) => (
           <ChatMessage message={chatMessage} />
         ))}
