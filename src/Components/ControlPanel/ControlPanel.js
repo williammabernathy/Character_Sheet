@@ -13,7 +13,8 @@ const ControlPanel = ({ match }) => {
         <SideBar />
 
         <Switch>
-          <Route path={`${match.path}/main`} component={Main}></Route>
+          <Route exact path={`${match.path}/`} component={Main}></Route>
+          <Route path={`${match.path}/charactersheet`} component={CharacterSheetMain}></Route>
           <Route path={`${match.path}/chat`} component={Chat}></Route>
         </Switch>
       </Router>

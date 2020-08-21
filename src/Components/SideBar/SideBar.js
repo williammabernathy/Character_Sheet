@@ -1,7 +1,8 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
-import Switch from "react-switch";
+import Switch from 'react-switch';
+import { BiArrowToLeft, BiTransferAlt, BiBookContent, BiMessageDetail } from 'react-icons/bi';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
 
@@ -18,6 +19,7 @@ class SideBar extends React.Component {
 
     // set the state to change if sidebar is toggled or not
     handleCollapseToggle(collapsed) {
+        console.log("collapsed = " + collapsed);
         this.setState({ collapsed });
     }
 
@@ -30,21 +32,20 @@ class SideBar extends React.Component {
                 <ProSidebar collapsed={this.state.collapsed}>
 
                     <SidebarContent>
-                        <Menu iconShape="square">
-                            <MenuItem>
-                                Minimize Sidebar<br/>
-                                <Switch className="sidebarToggleButton"
-                                    variant="secondary"
-                                    checked={this.state.collapsed}
-                                    onChange={this.handleCollapseToggle}/>
+                        <Menu iconShape="circle" onClick={this.handleCollapseToggle}>
+                            <MenuItem icon={<BiArrowToLeft />} onClick={this.handleCollapseToggle}>
+                                Minimize Sidebar
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem icon={<BiTransferAlt />}>
+                                RightToLeft
+                            </MenuItem>
+                            <MenuItem icon={<BiBookContent />}>
                                 Character Sheet
-                                <Link to="/controlpanel/main"/>
+                                <Link to="/controlpanel/charactersheet" />
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem icon={<BiMessageDetail />}>
                                 Chat
-                                <Link to="/controlpanel/chat"/>
+                                <Link to="/controlpanel/chat" />
                             </MenuItem>
                         </Menu>
                     </SidebarContent>

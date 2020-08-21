@@ -4,7 +4,7 @@ import './CharacterSheetMain.css'
 const CharacterSheetMain = () => {
     return (
         <div>
-            Test
+            Test for character sheet
         </div>
     );
 };

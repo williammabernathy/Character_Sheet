@@ -5,7 +5,7 @@ const Main = () => {
     return (
         <div className="mainWrapper">
             <main>
-                Test
+                Test for Main Control Panel Landing Page
             </main>
         </div>
     );
