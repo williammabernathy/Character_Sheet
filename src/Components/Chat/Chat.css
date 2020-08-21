@@ -1,5 +1,15 @@
-.mainChat{
-    width: 40vh;
-    height: 80vh;
+.chatContainer{
+    width: 400px;
+    height: 800px;
     border: 2px solid black;
+    overflow-y: scroll;
+    overflow-x: break-word;
+    overflow-x: hidden;
+}
+
+.chat{
+    float: left;
+}
+.chatInput{
+    width: 400px;
 }

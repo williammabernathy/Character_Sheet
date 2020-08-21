@@ -8,7 +8,6 @@ import Home from '../Components/Home/Home';
 import ControlPanel from '../Components/ControlPanel/ControlPanel';
 import Login from '../Components/Login/Login';
 import Account from '../Components/Account/Account';
-import Chat from '../Components/Chat/Chat';
 
 const App = () => {
   return (
