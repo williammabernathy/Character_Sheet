@@ -40,11 +40,11 @@ class SideBar extends React.Component {
                             </MenuItem>
                             <MenuItem>
                                 Character Sheet
-                                {/*<Link to="controlpanel/charactersheet"/>*/}
+                                <Link to="/controlpanel/main"/>
                             </MenuItem>
                             <MenuItem>
                                 Chat
-                                {/*<Link to="controlpanel/chat"/>*/}
+                                <Link to="/controlpanel/chat"/>
                             </MenuItem>
                         </Menu>
                     </SidebarContent>
