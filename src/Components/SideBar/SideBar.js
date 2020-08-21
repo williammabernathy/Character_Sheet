@@ -1,7 +1,6 @@
 import React from 'react';
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem, SidebarContent } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
-import Switch from 'react-switch';
 import { BiArrowToLeft, BiTransferAlt, BiBookContent, BiMessageDetail } from 'react-icons/bi';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './SideBar.css'
@@ -32,7 +31,7 @@ class SideBar extends React.Component {
                 <ProSidebar collapsed={this.state.collapsed}>
 
                     <SidebarContent>
-                        <Menu iconShape="circle" onClick={this.handleCollapseToggle}>
+                        <Menu iconShape="circle">
                             <MenuItem icon={<BiArrowToLeft />} onClick={this.handleCollapseToggle}>
                                 Minimize Sidebar
                             </MenuItem>
