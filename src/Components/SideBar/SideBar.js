@@ -7,7 +7,7 @@ import './SideBar.css'
 
 const SideBar = () => {
     const [rtl, setRtl] = useState(false);
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
 
     // set the state to change if sidebar is toggled or not
     const handleCollapseToggle = () => {
