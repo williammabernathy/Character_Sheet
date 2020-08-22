@@ -8,6 +8,7 @@ const CharacterSheetMain = () => {
     
     return (
         <div className="CSMainWrapper">
+
             <div className="statBlockWrapper">
                 {statAttrNames.map((stat, index) => (
                     <StatBlock 
@@ -16,6 +17,7 @@ const CharacterSheetMain = () => {
                     />
                 ))}
             </div>
+            
         </div>
     );
 };
